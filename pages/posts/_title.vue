@@ -48,7 +48,7 @@ export default {
           {
             hid: 'description',
             name: 'description',
-            content: this.article.title
+            content: this.article.description
           },
           {
             hid: 'og-image',
