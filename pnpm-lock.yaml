@@ -9,6 +9,7 @@ specifiers:
   '@nuxtjs/eslint-module': ^3.0.2
   '@nuxtjs/pwa': ^3.3.5
   '@nuxtjs/tailwindcss': ^4.2.1
+  '@tailwindcss/typography': ^0.5.0
   core-js: ^3.19.3
   eslint: ^8.4.1
   eslint-config-prettier: ^8.3.0
@@ -27,6 +28,7 @@ dependencies:
   '@nuxt/content': 1.15.1_webpack@4.46.0
   '@nuxtjs/axios': 5.13.6
   '@nuxtjs/pwa': 3.3.5
+  '@tailwindcss/typography': 0.5.0
   core-js: 3.20.3
   nuxt: 2.15.8
   vue: 2.6.14
@@ -1877,6 +1879,17 @@ packages:
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
+    dev: false
+
+  /@tailwindcss/typography/0.5.0:
+    resolution: {integrity: sha512-1p/3C6C+JJziS/ghtG8ACYalbA2SyLJY27Pm33cVTlAoY6VQ7zfm2H64cPxUMBkVIlWXTtWHhZcZJPobMRmQAA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
     dev: false
 
   /@types/anymatch/3.0.0:
@@ -6337,8 +6350,16 @@ packages:
     resolution: {integrity: sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=}
     dev: false
 
+  /lodash.castarray/4.4.0:
+    resolution: {integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=}
+    dev: false
+
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
+    dev: false
+
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=}
     dev: false
 
   /lodash.kebabcase/4.1.1:
@@ -6351,7 +6372,6 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
 
   /lodash.template/4.5.0:
     resolution: {integrity: sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==}

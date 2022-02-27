@@ -1,9 +1,10 @@
 ---
-title: First Post
-description: 'This is like a description of sorts for the post'
-url: first
+title: Dummy post
+description: 'Xue hua piao piao bei feng xiao xiao'
+url: second
 banner: /banner.webp
 created: 2022-02-27
+
 ---
 
 ![test](/banner.webp)

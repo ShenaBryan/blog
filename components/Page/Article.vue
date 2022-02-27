@@ -1,7 +1,7 @@
 <template>
   <div class="p-2 flex flex-col justify-start items-start space-y-2 w-full">
       <nuxt-content
-        class="prose dark:prose-dark prose-md w-full"
+        class="prose prose-dark prose-md w-full"
         :document="news"
       />
   </div>

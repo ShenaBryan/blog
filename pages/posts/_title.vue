@@ -1,4 +1,5 @@
 <template>
+<div class = "bg-zinc-800">
   <div class="p-8">
     <div class="text-lg">
       <div
@@ -15,16 +16,14 @@
           <div
             class="
               p-2
-              text-gray-700
-              dark:text-white
+              text-white
               font-semibold
               border-zinc-400 border-b-2
             "
           >
             {{ article.title }}
           </div>
-          <div class="p-4 text-sm">{{ formatDate(article.createdAt) }}</div>
-
+          <div class = "p-4 text-sm">{{formatDate(article.createdAt)}}</div>
           <div class="md:flex flex-row items-start justify-between px-2">
             <div class="flex flex-col items-start w-full md:w-auto order-2">
               <PageTable :news="article" />
@@ -37,12 +36,13 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 export default {
   async asyncData({ params, $content }) {
-    const article = await $content(`guides/${params.title}`).fetch()
+    const article = await $content(`blog/${params.title}`).fetch()
     return {
       article,
     }

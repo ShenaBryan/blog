@@ -50,20 +50,15 @@ export default {
 }
 </script>
 <template>
-  <div
-    class="
-      dark:bg-zinc-900 border-nett-maid border-b
-      bg-black
-      md:bg-white md:dark:bg-zinc-900 border-nett-maid border-b
-      shadow-md
+  <div class="
+      text-white bg-pamred-100
       max-w-full
       block
       w-full
       top-0
       fixed
       z-50
-    "
-  >
+    ">
     <div class="max-w-7xl mx-auto px-2 md:px-6 lg:px-8 md:mt-4">
       <div class="relative flex items-center justify-between h-16">
         <div class="relative inset-y-0 left-0 flex items-center md:hidden">
@@ -75,8 +70,8 @@ export default {
               justify-center
               p-2
               rounded-md
-              text-white md:text-zinc-700 dark:text-white
-              hover:text-zinc-700 dark:text-white
+              text-white md:text-zinc-700 md:text-white dark:text-white
+              hover:text-zinc-700 md:text-white dark:text-white
               focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white
             `"
             @click="toggleOn"
@@ -116,15 +111,13 @@ export default {
             </svg>
           </button>
         </div>
-        <div
-          class="
+        <div class="
             flex-1 flex
             fixed
             md:static
             items-center
             md:items-stretch md:justify-start
-          "
-        >
+          ">
           <div class="flex-shrink-0 flex items-center">
             <NuxtLink to="/">
               <img
@@ -134,53 +127,43 @@ export default {
               />
             </NuxtLink>
           </div>
-          <div
-            :class="`z-40 block h-full top-0 left-0 bg-white dark:bg-zinc-900 md:bg-transparent fixed md:static transform transition duration-500 ease-in-out md:translate-x-0 p-8 md:p-0 md:block ${
+          <div :class="`z-40 block shadow-lg h-full top-0 left-0 bg-zinc-900 md:bg-transparent fixed md:static transform transition duration-500 ease-in-out md:translate-x-0 p-8 md:p-0 md:block ${
               toggleNav ? 'translate-x-0' : '-translate-x-110 md:ml-6'
-            }`"
-          >
+            }`">
             <NuxtLink to="/">
-              <div
-                class="
+              <div class="
                   flex-shrink-0 flex
                   block
                   md:hidden
                   items-center
-                  bg-black
-                  md:bg-white
-                  dark:bg-zinc-900 border-nett-maid border-b
-                  md:dark:bg-zinc-900 border-nett-maid border-b
+                  bg-pamred-100
+                  bg-zinc-900 border-nett-maid border-b
+                  border-nett-maid border-b
                   shadow-md
                   top-0
                   left-0
                   absolute
                   w-full
                   h-16
-                "
-              >
+                ">
                 <img
                   class="h-12 w-auto p-2"
                   :src="$icon(512)"
                   alt="Placeholder"
                 />
-                <span class="text-white font-bold">{{ Constants.Name }}</span>
               </div>
             </NuxtLink>
 
-            <div
-              class="flex flex-col md:flex-row justify-between space-x-1 w-full"
-            >
-              <div
-                class="
+            <div class="flex flex-col md:flex-row justify-between space-x-1 w-full">
+              <div class="
                   flex
                   md:space-x-4
                   flex-col
                   md:flex-row md:justify-between md:w-full md:pt-0
                   pt-10
-                "
-              >
+                ">
                 <div
-                  v-for="{ name, route, key, icon } in Navigation"
+                  v-for="{ name, route, key } in Navigation"
                   :key="key"
                 >
                   <NuxtLink
@@ -188,13 +171,13 @@ export default {
                     :to="typeof route == 'string' ? route : '#'"
                     :class="
                       (title === key
-                        ? 'text-zinc-700 dark:text-white '
-                        : 'text-black dark:text-white border-transparent ') +
+                        ? 'text-white '
+                        : 'text-white border-transparent ') +
                       (Array.isArray(route) ? 'group ' : '') +
-                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4 text-xs md:text-md hover:dark:text-nett-maid hover:text-zinc-800 block'
+                      'transition duration-500 ease-in-out tracking-wide px-3 max-w-md md:max-w-full flex flex-row space-x-4 md:uppercase py-4 text-xs md:text-md hover:dark:text-nett-maid hover:text-zinc-800 block'
                     "
                   >
-                    <span><SVGWrapper :name="icon" /></span>
+                    <!--                    <span><SVGWrapper :name="icon" /></span>-->
                     <span class="py-1">{{ name }}</span>
                     <div
                       v-if="Array.isArray(route)"
@@ -225,8 +208,7 @@ export default {
                           hover:text-black
                         "
                         :href="route2"
-                        >{{ name2 }}</a
-                      >
+                      >{{ name2 }}</a>
                     </div>
                   </NuxtLink>
                   <a
@@ -235,18 +217,18 @@ export default {
                     @click="(x) => setState(key)"
                     :class="
                       (title === key
-                        ? 'text-zinc-700 dark:text-white '
+                        ? 'text-zinc-700 md:text-white dark:text-white '
                         : 'dark:text-white text-black ') +
                       (Array.isArray(route) ? 'group ' : '') +
                       'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4 text-xs md:text-md hover:dark:text-nett-maid hover:text-zinc-800 block'
                     "
                   >
-                    <span><SVGWrapper :name="icon" /></span>
-                    <span class="py-1">{{ name }}</span>
-                    <span><SVGDown /></span>
+                    <!--                    <span><SVGWrapper :name="icon" /></span>--> <span class="py-1">{{ name }}</span>
+                    <span>
+                      <SVGDown />
+                    </span>
 
-                    <div
-                      :class="`
+                    <div :class="`
                         absolute
                         flex
                         bg-white
@@ -263,8 +245,7 @@ export default {
                         transition
                         duration-300
                         ease-in-out
-`"
-                    >
+`">
                       <NuxtLink
                         v-for="{ name2, route2, key2 } in route"
                         :key="key2"
@@ -275,8 +256,7 @@ export default {
                           hover:bg-zinc-100 hover:text-black
                         "
                         :to="route2"
-                        >{{ name2 }}</NuxtLink
-                      >
+                      >{{ name2 }}</NuxtLink>
                     </div>
                   </a>
                   <a
@@ -284,14 +264,13 @@ export default {
                     :href="typeof route == 'string' ? route : '#'"
                     :class="
                       (title === key
-                        ? 'text-zinc-700 dark:text-white '
+                        ? 'text-zinc-700 md:text-white dark:text-white '
                         : 'dark:text-white text-black ') +
                       (Array.isArray(route) ? 'group ' : '') +
                       'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4 text-xs md:text-md hover:dark:text-nett-maid hover:text-zinc-800 block'
                     "
                   >
-                    <span><SVGWrapper :name="icon" /></span>
-                    <span class="py-1">{{ name }}</span>
+                    <!--                    <span><SVGWrapper :name="icon" /></span>--> <span class="py-1">{{ name }}</span>
                     <div
                       v-if="Array.isArray(route)"
                       class="
@@ -321,8 +300,7 @@ export default {
                           hover:text-black
                         "
                         :href="route2"
-                        >{{ name2 }}</a
-                      >
+                      >{{ name2 }}</a>
                     </div>
                   </a>
                 </div>
@@ -332,7 +310,7 @@ export default {
           <div
             :class="`inset-0 w-full fixed h-full z-30 block ${
               toggleNav || anyState()
-                ? 'visible bg-zinc-100 bg-opacity-10'
+                ? 'visible bg-zinc-100 bg-opacity-0'
                 : 'invisible'
             }`"
             @click="

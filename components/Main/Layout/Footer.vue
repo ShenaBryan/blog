@@ -2,10 +2,7 @@
 <template>
   <footer
     class="
-      dark:bg-zinc-900
-      md:dark:bg-zinc-900 border-nett-maid border-t
-      bg-black
-      md:bg-white
+      bg-zinc-900
       shadow-md
       text-center
       md:text-left
@@ -27,23 +24,16 @@
     >
       <div class="flex-1">
         <li>
-          Copyright
-          <a
-            href="https://github.com/retraigo"
-            target="_blank"
-            class="font-bold"
-          >
-            NeTT
-          </a>
+
         </li>
       </div>
       <div class="flex-initial mt-3 sm:mt-0">
         <a
-          href="https://nekooftheabyss.xyz"
+          href="https://presidentanimememes.com"
           target="_blank"
           class="font-semibold"
         >
-          Neko of the Abyss
+          President Anime Memes
         </a>
       </div>
     </ul>
