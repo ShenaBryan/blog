@@ -41,6 +41,24 @@
 
 <script>
 export default {
+  head() {
+    return {
+        title: this.article.title,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.article.title
+          },
+          {
+            hid: 'og-image',
+            name: 'og:image',
+            content: this.article.banner
+          }
+        ]
+      }
+
+  },
   async asyncData({ params, $content }) {
     const article = await $content(`blog/${params.title}`).fetch()
     return {
