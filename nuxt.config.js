@@ -1,3 +1,5 @@
+import Constants from "./data/Constants"
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -49,13 +51,31 @@ export default {
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     icon: {
-      sizes: [16, 32, 64, 120, 144, 152, 192, 384, 512]
-
+      sizes: [16, 32, 64, 120, 144, 152, 192, 384, 512],
     },
     manifest: {
       lang: 'en',
+      name: Constants.Name,
+      short_name: 'PAM',
+      description: Constants.Description,
+      background_color: Constants.Background,
+      theme_color: Constants.Theme,
+    },
+    meta: {
+      lang: 'en',
+      name: Constants.Name,
+      short_name: 'PAM',
+      description: Constants.Description,
+      background_color: Constants.Background,
+      theme_color: Constants.Theme,
+      appleStatusBarStyle: 'black',
+      author: Constants.Author,
+      twitterCard: 'summary_large_image',
+      ogHost: 'https://blog.presidentanimememes.com',
+      ogUrl: 'https://blog.presidentanimememes.com',
     },
   },
 
